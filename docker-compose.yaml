@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: "orders"
+      APP_DB_USER: "docker"
+      APP_DB_PASSWORD: "docker"
+    ports:
+      - "5432:5432"
+    volumes:
+#       - pgdata:/var/lib/postgresql/data
+      - ./scripts/postgress:/docker-entrypoint-initdb.d
+
+volumes:
+  pgdata:
+    driver: local
