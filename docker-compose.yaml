@@ -12,9 +12,11 @@ services:
     ports:
       - "5432:5432"
     volumes:
-#       - pgdata:/var/lib/postgresql/data
       - ./scripts/postgress:/docker-entrypoint-initdb.d
 
-volumes:
-  pgdata:
-    driver: local
+  nats-streaming:
+    image: nats-streaming:latest
+    restart: always
+    ports:
+      - "4222:4222"
+      - "8222:8222"
