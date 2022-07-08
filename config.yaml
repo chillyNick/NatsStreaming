@@ -13,3 +13,7 @@ database:
   user: docker
   password: docker
   name: orders
+
+rest:
+  host: localhost
+  port: 8080

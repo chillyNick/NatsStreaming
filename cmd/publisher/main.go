@@ -97,6 +97,8 @@ func main() {
 			log.Error().Err(err).Msg("Failed to send order ino nuts")
 		}
 
-		time.Sleep(time.Minute)
+		log.Info().Msgf("send into stream order: %d", i)
+
+		time.Sleep(time.Second * 5)
 	}
 }

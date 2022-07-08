@@ -36,10 +36,16 @@ type NatsStreaming struct {
 	DurableName string `yaml:"durableName"`
 }
 
+type Rest struct {
+	Port int    `yaml:"port"`
+	Host string `yaml:"host"`
+}
+
 // Config - contains all configuration parameters in config package.
 type Config struct {
 	Database      Database      `yaml:"database"`
 	NatsStreaming NatsStreaming `yaml:"natsStreaming"`
+	Rest          Rest          `yaml:"rest"`
 }
 
 // ReadConfigYML - read configurations from file and init instance Config.
